@@ -16,6 +16,16 @@
     outline: none;
 }
 
-.icon {
-    font-size: 25px;
+.s-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: orange;
+    border-radius: 5px;
+    padding: 4px;
+    color: white;
+}
+
+.s-icon:hover {
+    cursor: pointer;
 }
