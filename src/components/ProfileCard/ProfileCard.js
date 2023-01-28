@@ -14,6 +14,24 @@ const ProfileCard = () => {
                 <span>Zendya MJ</span>
                 <span>Senior UI/UX Designer</span>
             </div>
+            <div className='folowStatus'>
+                <hr />
+                <div>
+                    <div className='follow'>
+                        <span>6890</span>
+                        <span>Following</span>
+                    </div>
+                    <div className='vl'></div>
+                    <div className='follow'>
+                        <span>1</span>
+                        <span>Followers</span>
+                    </div>
+                </div>
+                <hr />
+            </div>
+            <span>
+                My Profile
+            </span>
         </div>
     );
 };
