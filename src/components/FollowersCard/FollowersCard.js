@@ -15,9 +15,12 @@ const FollowersCard = () => {
                                 <img src={follower.img} alt="" className='followerImg' />
                                 <div className='name'>
                                     <span>{follower.name}</span>
-                                    <span>{follower.username}</span>
+                                    <span>@{follower.username}</span>
                                 </div>
                             </div>
+                            <button className='button'>
+                                Follow
+                            </button>
                         </div>
                     )
                 })
