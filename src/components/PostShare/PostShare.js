@@ -64,6 +64,7 @@ const PostShare = () => {
                     image && (
                         <div className='previewImage'>
                             <ImCross />
+                            <img src={image.image} alt="" />
                         </div>
                     )
                 }
