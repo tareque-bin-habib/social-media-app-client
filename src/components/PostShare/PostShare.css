@@ -18,3 +18,12 @@
     width: 90%;
     gap: 1rem;
 }
+
+.postShare>div>input {
+    background-color: var(--inputColor);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+}
