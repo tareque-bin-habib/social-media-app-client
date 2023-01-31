@@ -1,7 +1,7 @@
 .postShare {
     display: flex;
     gap: 1rem;
-    background-color: (--cardColor);
+    background-color: var(--cardColor);
     padding: 1rem;
     border-radius: 1rem;
 }
@@ -26,4 +26,29 @@
     font-size: 17px;
     border: none;
     outline: none;
+}
+
+.postOptions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.option {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+}
+
+.option:hover {
+    cursor: pointer;
+}
+
+
+.schedule {
+    font-size: 23px;
 }

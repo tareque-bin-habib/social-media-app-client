@@ -4,7 +4,7 @@ import './PostShare.css'
 import { HiOutlinePhotograph } from 'react-icons/hi';
 import { AiOutlinePlayCircle } from 'react-icons/ai';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
-import { GrFormSchedule } from 'react-icons/gr';
+import { CiViewTimeline } from 'react-icons/ci';
 
 
 const PostShare = () => {
@@ -13,25 +13,34 @@ const PostShare = () => {
             <img src={profile} alt="" />
             <div>
                 <input type="text" placeholder="what's happening" />
+                <div className='postOptions'>
+                    <div className='option'
+                        style={{ color: 'var(--photo)' }}
+                    >
+                        <HiOutlinePhotograph className='schedule' />
+                        Photo
+                    </div>
+                    <div className='option'
+                        style={{ color: 'var(--video)' }}
+                    >
+                        <AiOutlinePlayCircle className='schedule' />
+                        Video
+                    </div>
+                    <div className='option'
+                        style={{ color: 'var(--location)' }}
+                    >
+                        <HiOutlineLocationMarker className='schedule' />
+                        Location
+                    </div>
+                    <div className='option'
+                        style={{ color: 'var(--shedule)' }}
+                    >
+                        <CiViewTimeline className='schedule' />
+                        Schedule
+                    </div>
+                </div>
             </div>
-            <div className='postOptions'>
-                <div className='option'>
-                    <HiOutlinePhotograph />
-                    Photo
-                </div>
-                <div className='option'>
-                    <AiOutlinePlayCircle />
-                    Video
-                </div>
-                <div className='option'>
-                    <HiOutlineLocationMarker />
-                    Location
-                </div>
-                <div className='option'>
-                    <GrFormSchedule />
-                    Schedule
-                </div>
-            </div>
+
         </div>
     );
 };
