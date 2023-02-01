@@ -63,7 +63,7 @@ const PostShare = () => {
                 {
                     image && (
                         <div className='previewImage'>
-                            <ImCross />
+                            <ImCross onClick={() => setImage(null)} />
                             <img src={image.image} alt="" />
                         </div>
                     )
