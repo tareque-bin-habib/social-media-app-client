@@ -18,3 +18,10 @@
 .setting {
     font-size: 25px;
 }
+
+.r-button {
+    height: 3rem;
+    width: 80%;
+    align-self: center;
+    font-size: 18px;
+}
