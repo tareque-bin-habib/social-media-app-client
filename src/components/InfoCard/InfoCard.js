@@ -8,27 +8,30 @@ const InfoCard = () => {
         <div className='infoCard'>
             <div className='infoHead'>
                 <h4>Your info</h4>
-                <BsPen />
+                <div>
+                    <BsPen />
+                </div>
+
             </div>
             <div className='info'>
                 <span>
-                    <b>Status</b>
+                    <b>Status </b>
                 </span>
                 <span>In a relationship</span>
             </div>
             <div className='info'>
                 <span>
-                    <b>Lives in</b>
+                    <b>Lives in </b>
                 </span>
                 <span>Chattogram</span>
             </div>
             <div className='info'>
                 <span>
-                    <b>Works at</b>
+                    <b>Works at </b>
                 </span>
                 <span>Salsabil Group</span>
             </div>
-            <button className='button'>Logout</button>
+            <button className='button logout-btn'>Logout</button>
         </div>
     );
 };

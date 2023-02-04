@@ -6,7 +6,7 @@ import './ProfileLeft.css'
 
 const ProfileLeft = () => {
     return (
-        <div className='profileLeft'>
+        <div className='profileSide'>
             <LogoSearch></LogoSearch>
             <InfoCard></InfoCard>
             <FollowersCard></FollowersCard>
