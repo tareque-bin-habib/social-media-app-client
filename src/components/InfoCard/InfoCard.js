@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './InfoCard.css'
 import { BsPen } from 'react-icons/bs';
+import ProfileModal from '../ProfileModal/ProfileModal';
 
 
 const InfoCard = () => {
+
+    const [modal, setModal] = useState(false)
+
+
     return (
         <div className='infoCard'>
             <div className='infoHead'>
                 <h4>Your info</h4>
                 <div>
-                    <BsPen />
+                    <BsPen onClick={() => setModal(true)} />
+                    <ProfileModal modal={modal} setModal={setModal}></ProfileModal>
                 </div>
 
             </div>
