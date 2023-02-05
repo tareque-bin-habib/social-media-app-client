@@ -20,7 +20,7 @@ const Auth = () => {
 function SignUp() {
     return (
         <div className='a-right'>
-            <form className='info-form'>
+            <form className='info-form authForm'>
                 <h3>Sign up</h3>
                 <div>
                     <input type="text" placeholder='First Name' className='infoInput' name='firstName' />
@@ -30,9 +30,13 @@ function SignUp() {
                     <input type="text" placeholder='User name' className='infoInput' name='userName' />
                 </div>
                 <div>
-                    <input type="text" placeholder='Password' className='infoInput' name='password' />
-                    <input type="text" placeholder='Confirm Password' className='infoInput' name='confirm' />
+                    <input type="password" placeholder='Password' className='infoInput' name='password' />
+                    <input type="password" placeholder='Confirm Password' className='infoInput' name='confirm' />
                 </div>
+                <div>
+                    <span>Already have an account. Login!</span>
+                </div>
+                <button className='button infoButton' type='submit'>Signup</button>
 
             </form>
         </div>
