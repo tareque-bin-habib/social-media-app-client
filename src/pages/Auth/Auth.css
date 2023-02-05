@@ -79,3 +79,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.authFormLogin {
+    background-color: var(--cardColor);
+    border-radius: 1rem;
+    padding: 70px;
+}
