@@ -33,3 +33,24 @@
     -moz-background-clip: text;
     -moz-text-fill-color: transparent
 }
+
+.webName>h6 {
+    font-size: 0.85rem;
+}
+
+.info-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.infoInput {
+    border: none;
+    outline: none;
+    background-color: var(--inputColor);
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+}
