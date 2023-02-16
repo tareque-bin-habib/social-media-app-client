@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import './Auth.css'
 import logo from '../../img/logo.png'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logIn, signUp } from '../../actions/AuthAction';
 
 const Auth = () => {
-    const [isSignUp, setIsSignUp] = useState(true)
     const dispatch = useDispatch()
-
-    const [data, setData] = useState({ firstName: "", lastName: "", userName: "", password: "", confirm: "" })
+    const loading = useSelector((state) => state.authReducer.loading)
+    const [isSignUp, setIsSignUp] = useState(true)
+    console.log(loading)
+    const [data, setData] = useState({ firstname: "", lastname: "", username: "", password: "", confirm: "" })
 
     const [confirmPass, setConfirmpass] = useState(true)
 
@@ -21,7 +22,7 @@ const Auth = () => {
         e.preventDefault()
 
         if (isSignUp) {
-            data.password === data.confirmPass ? dispatch(signUp(data)) : setConfirmpass(false)
+            data.password === data.confirm ? dispatch(signUp(data)) : setConfirmpass(false)
         }
         else {
             dispatch(logIn(data))
@@ -30,7 +31,7 @@ const Auth = () => {
 
     const resetForm = () => {
         setConfirmpass(true)
-        setData({ firstName: "", lastName: "", userName: "", password: "", confirm: "" })
+        setData({ firstname: "", lastname: "", username: "", password: "", confirm: "" })
     }
 
 
@@ -51,13 +52,13 @@ const Auth = () => {
                     {
                         isSignUp &&
                         <div>
-                            <input type="text" placeholder='First Name' className='infoInput' name='firstName' onChange={handleChange} value={data.firstName} />
-                            <input type="text" placeholder='Last Name' className='infoInput' name='lastName' onChange={handleChange} value={data.lastName} />
+                            <input type="text" placeholder='First Name' className='infoInput' name='firstname' onChange={handleChange} value={data.firstname} />
+                            <input type="text" placeholder='Last Name' className='infoInput' name='lastname' onChange={handleChange} value={data.lastname} />
                         </div>
                     }
 
                     <div>
-                        <input type="text" placeholder='User name' className='infoInput' name='userName' onChange={handleChange} value={data.userName} />
+                        <input type="text" placeholder='User name' className='infoInput' name='username' onChange={handleChange} value={data.username} />
                     </div>
                     <div>
                         <input type="password" placeholder='Password' className='infoInput' name='password' onChange={handleChange} value={data.password} />
@@ -72,7 +73,7 @@ const Auth = () => {
                     <div>
                         <span style={{ fontSize: '12px', cursor: "pointer" }} onClick={() => { setIsSignUp((prev) => !prev); resetForm() }}>{isSignUp ? "Already have an account. Login!" : "Don't have an account please Sign up"}</span>
                     </div>
-                    <button className='button infoButton' type='submit'>{isSignUp ? "Signup" : "Log in"}</button>
+                    <button className='button infoButton' type='submit' disabled={loading}>{loading ? "Loading.." : isSignUp ? "Signup" : "Log in"}</button>
 
                 </form>
             </div>
