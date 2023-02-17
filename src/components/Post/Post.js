@@ -1,30 +1,49 @@
-import React from 'react';
-import './Post.css'
+import React, { useState } from "react";
+import "./Post.css";
+import comment from "../../img/comment.png";
+import Share from "../../img/share.png";
+import like from "../../img/like.png";
+import NotLike from "../../img/notlike.png";
+import { useSelector } from "react-redux";
+// import { likePost } from "../../Api/PostRequest";
+import { likePost } from '../../api/PostRequest'
 
-import comment from '../../img/comment.png'
-import share from '../../img/share.png'
-import heart from '../../img/like.png'
-import notLike from '../../img/notlike.png'
+const Post = ({ post }) => {
 
-const Post = ({ data }) => {
+    const { user } = useSelector((state) => state.authReducer.authData);
+    const [likes, setLikes] = useState(post.likes.length);
+
+    const [liked, setLiked] = useState(post.likes.includes(user._id));
+    const { image, name, desc } = post;
+    const handleLike = () => {
+        setLiked(prev => !prev)
+        likePost(post._id, user._id)
+        liked ? setLikes((prev) => prev - 1) : setLikes((prev) => prev + 1)
+    }
+
     return (
-        <div className='post'>
-            <img src={data.img} alt="" />
-
-            <div className='postReact'>
-                <img src={data.liked ? heart : notLike} alt="" />
+        <div className="post">
+            <img
+                src={image ? process.env.REACT_APP_PUBLIC_FOLDER + image : ""}
+                alt=""
+            />
+            <div className="postReact">
+                <img
+                    src={likes ? like : NotLike}
+                    alt=""
+                    style={{ cursor: "pointer" }}
+                    onClick={handleLike}
+                />
                 <img src={comment} alt="" />
-                <img src={share} alt="" />
-
+                <img src={Share} alt="" />
             </div>
-
-            <span style={{ color: 'var(--gray)', fontSize: '15px' }}>{data.likes} likes</span>
-
-            <div className='details'>
-                <span><b>{data.name} </b></span>
-                <span>{data.desc}</span>
+            <span>{likes}Likes</span>
+            <div className="detail">
+                <span>
+                    <b>{name}</b>
+                </span>
+                <span>{desc}</span>
             </div>
-
         </div>
     );
 };

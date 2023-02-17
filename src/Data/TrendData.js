@@ -1,4 +1,4 @@
-export const TrendData = [
+const TrendData = [
     {
         name: 'Mnions',
         shares: 97,
@@ -24,4 +24,6 @@ export const TrendData = [
         shares: 30,
     }
 
-] 
+]
+
+export default TrendData
